@@ -40,7 +40,7 @@ brew install webstorm
 # pycharm
 brew install pycharm
 ########## tool ###########
-
+brew install moefe-google-translate
 brew install spectacle
 brew install evernote
 brew install alfred
