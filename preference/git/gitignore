@@ -1,0 +1,14 @@
+#brazil build folder
+build
+out/
+
+#node js
+dist/
+node_modules/
+
+#idea
+*.iml
+.idea/
+
+#IOS
+.DS_Store

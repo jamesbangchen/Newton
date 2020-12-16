@@ -1,0 +1,325 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=$HOME/.toolbox/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+
+export PATH=$JAVA_HOME:$PATH
+export BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short
+
+export AUTO_TITLE_SCREENS="NO"
+
+#to ssh some host
+alias jssh='ssh -o ProxyCommand=none';
+
+
+alias bb=brazil-build
+
+#brazil
+alias bba='brazil-build apollo-pkg'
+alias bbr='brazil-build release'
+alias bre='brazil-runtime-exec'
+alias brc='brazil-recursive-cmd'
+alias bws='brazil ws'
+alias bwsuse='bws use --gitMode -p'
+alias brc=brazil-recursive-cmd
+alias bbr='brc brazil-build'
+alias bball='brc --allPackages'
+alias bbb='brc --allPackages brazil-build'
+alias bbra='bbr apollo-pkg'
+
+#brazil
+alias bcreate='brazil ws create --name '
+#delete the pkg
+alias bdpkg='brazil workspace --remove --package '
+#delete ws
+alias bdel='brazil ws --delete --root '
+#brazil workspace --use --versionset <version set name> --eventId <event id>
+alias bver='brazil ws --use --versionSet '
+alias bshow='brazil workspace show'
+alias bclean='brazil workspace --clean '
+alias bbc='bb clean '
+alias bbs='bb server'
+#brazil dry run
+alias bdryrun='brazil workspace --dryrun '
+alias bsync='brazil ws --sync md '
+
+#my alias
+#cmd
+alias cmd="cat ~/.zshrc"
+alias vcmd="vi ~/.zshrc"
+alias s="source ~/.zshrc"
+
+#screen 
+#screen list all
+alias sl='screen -ls'
+#reconnect
+alias sr='screen -r'
+#create and name
+alias ss='screen -S'
+#delete
+alias sd='screen -X -S ${screenName} quit'
+
+#brazil
+alias bcreate='brazil ws create --name '
+alias bpkg='brazil ws --use -p '
+alias bdel='brazil ws --delete --root '
+alias bver='brazil ws --use --versionSet '
+
+#shell
+#ls
+alias l='ls -l'
+alias ll='ls -l'
+alias lt='ls -l -t'
+alias la='ls -all'
+#pwd
+alias p='pwd'
+#cat
+alias c='cat'
+alias v='vi'
+alias sv='sudo vi'
+alias h='hostname '
+alias ip='hostname -i'
+alias f='readlink -f '
+alias t='tail -f '
+
+#yasuo compress
+alias yasuo='tar -czvf '
+alias jieya='tar -xzvf '
+
+#git cmd
+alias ga='git add '
+alias gaa='git add -A'
+alias gc='git checkout '
+alias gcmt='git commit -m '
+alias gb='git branch '
+alias gcm='git checkout mainline '
+alias gcmp='git checkout mainline;git pull '
+alias gr='git rebase mainline '
+alias gpl='git pull '
+alias gph='git push '
+alias gl='git log '
+alias gst='git status '
+alias gsh='git show '
+alias icr='post-review --parent=mainline '
+alias upicr='post-review --parent=mainline -r '
+alias gd='git diff '
+alias gdm='git diff mainline'
+alias gmerge='git merge --squash '
+alias gsu='git branch --set-upstream-to=mainline '
+#update last commit for comments or files
+alias gca='git commit --amend '
+#delete the merged branch
+alias gbd='git branch -D '
+
+#start-tomcat
+#java remote debug
+#export JAVA_OPTS="$JAVA_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+
+#BM passrate
+alias tobmp='cd /Users/jianbang/workspaces/passRateBM/SXBrowserMasterTest/src/SXBrowserMasterTest;p'
+
+#ninja
+alias nsync='ninja-dev-sync '
+alias nconf='cat ~/.config/ninja-dev-sync.json '
+alias vnconf='vi ~/.config/ninja-dev-sync.json '
+alias nsetup='ninja-dev-sync -setup '
+alias nrm='ninja-dev-sync -remove '
+
+#connect beijing , phone tool
+#/apollo/env/envImprovement/bin/kcurl -k https://phonetool.amazon.com/users/pchi.json
+#alias phonetool='/apollo/env/envImprovement/bin/kcurl -k https://phonetool.amazon.com/users/'
+
+#to GlennWebsite/
+alias togwb='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteBlackPearl;p'
+alias togwc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteCommon;p'
+alias togwa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteAssets;p'
+alias togwoa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteOutboundAssets;p'
+alias togwoc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteOutboundContent;p'
+
+alias tognconfig='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennNodeConfiguration;p'
+alias togwcm='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteCommon;p'
+
+alias togwpsa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteProblemSolvingAssets;p'
+alias togwia='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteInventoryAssets;p'
+alias togwrma='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteResourceManagementAssets;p'
+alias togwpsc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteProblemSolvingContent;p'
+alias togwic='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteInventoryContent;p'
+
+#to assets space
+#alias togwpa='cd /Users/jianbang/workspaces/assetsBlackPearl/src/GlennWebsitePickAssets;p'
+alias togwpa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsitePickAssets;p'
+alias togwa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteAssets;p'
+
+#to website/
+alias togwb='cd /Users/jianbang/workspaces/website/src/GlennWebsiteBlackPearl;p'
+alias togwpc='cd /Users/jianbang/workspaces/website/src/GlennWebsitePickContent;p'
+
+#to GlennOutboundService
+alias togos='cd /Users/jianbang/workspaces/GlennOutboundService/src/GlennOutboundService;p'
+alias togosm='cd /Users/jianbang/workspaces/GlennOutboundService/src/GlennOutboundServiceModel;p'
+
+#to GlennPickAuthorityService
+alias togpas='cd /Users/jianbang/workspaces/GlennPickAuthorityService/src/GlennPickAuthorityService;p'
+alias togpasm='cd /Users/jianbang/workspaces/GlennPickAuthorityService/src/GlennPickAuthorityServiceModel;p'
+
+#build Glenn App
+alias toagwic='cd /Users/jianbang/workspaces/AppGlenn/src/GlennWebsiteInventoryContent;p'
+alias toagw='cd /Users/jianbang/workspaces/AppGlenn/src/GlennWebsite;p'
+alias toagwc='cd /Users/jianbang/workspaces/AppGlenn/src/GlennWebsiteContent;p'
+alias rebuildigw='toagwic;bbc;bb;toagwc;bbc;bb;toagw;bbc;bb;bb server'
+
+export PATH=$HOME/.toolbox/bin:$PATH
+
+#keberos
+#https://w.amazon.com/index.php/User:Aquesnel#get_new_forwardable_ticket
+#This command asks for a life time of 1 day for the ticket, but currently (2013-06-12) the amazon kerberos servers only give out tickets with life times of 10 hours.
+#This command asks for a renew lifetime of 1 month, but currently (2013-06-12) the amazon kerberos servers only give out tickets with life times of 1 week.
+alias i='kinit -f -l 86400 -r 2592000'
+#Renew ticket
+alias irenew='kinit -R'
+#check keberos list, run klist
+
+# build GlennWebsite backend and server
+alias rebuildgw='togwoa;bb run clean;rm -rf ./node_modules && bsync && bb && togwoc;bbc;bb && togw;bbc;bb && bb server'
+alias buildgwserver='togwoa;bb run clean;rm -rf ./node_modules;bb;togwoc;bbc;bb;togw;bbc;bb;bb server'
+
+#toec
+alias toec='ssh jianbang@dev-dsk-jianbang-2c-b95e7a9c.us-west-2.amazon.com'
+#toec2
+alias toec2='ssh -o ProxyCommand=none jianbang@ec2-c3-jianbang-9ac7653a.us-west-2.amazon.com'
+
+#Timber
+#timber NA https://apollo.amazon.com/environments/TimberFS/IAD/Glenn/
+#timber EU https://apollo.amazon.com/environments/TimberFS/DUB/Glenn/
+#timber FE https://apollo.amazon.com/environments/TimberFS/PDX/Glenn/
+#timber CN https://apollo.amazon.com/environments/TimberFS/PEK/Glenn/
+#ssh timber host
+alias totimbercn='ssh glenn-timberfs-prod-cn-c4x-5bf4c6f3.cn-north-1.amazon.com';
+alias totimberna='ssh glenn-timberfs-na-prod-1d-6ab3d511.us-east-1.amazon.com';
+
+#connect to RMS / mysql 
+alias postgresql='java -jar /Users/jianbang/Documents/Workbench-Build125/sqlworkbench.jar &'
+
+#james ec2 / ip 54.158.238.250
+alias tojamesec='ssh -i ~/.ssh/JamesKey.pem ec2-user@ec2-54-158-238-250.compute-1.amazonaws.com'
+
+
+#cache issue
+#brazil-package-cache enable_edge_cache
+#brazil-package-cache stop && brazil-package-cache start --debug
+
+#clean
+alias rmpcommon='rm -rf /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsitePickAssets/node_modules/gl-commons'
+alias rebuilda='togwa;bb;rmpcommon;togwpa;bb; bb run start:desktop'
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jianbang/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jianbang/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jianbang/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jianbang/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
