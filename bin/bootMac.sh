@@ -42,7 +42,9 @@ brew install pycharm
 ########## tool ###########
 brew install moefe-google-translate
 brew install spectacle
-brew install evernote
+#evernote international with Apple/Google account entry
+#brew install evernote
+brew install yinxiangbiji
 brew install alfred
 brew install jietu
 #############################
