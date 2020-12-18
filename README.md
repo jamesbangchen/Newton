@@ -6,3 +6,4 @@
 
 # TODO
 * Refine zshrc
+* Refine intellij plugins
