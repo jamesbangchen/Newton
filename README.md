@@ -7,3 +7,4 @@
 # TODO
 * Refine zshrc
 * Refine intellij plugins
+* why git not track .git
