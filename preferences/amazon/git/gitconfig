@@ -1,11 +1,11 @@
 [user]
-	email = chenjianbangstudy@yeah.net
-	name = James Chen
+	email = jianbang@amazon.com
+	name = Jianbang Chen
 [color]
 	ui = auto
 [core]
 	pager = less -FMRiX
-	excludesfile = ~/workspaces/github/Newton/preference/git/gitignore
+	excludesfile = ~/workspaces/github/Newton/preferences/amazon/git/gitignore
 [push]
 	default = simple
 [alias]
