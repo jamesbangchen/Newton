@@ -1,0 +1,7 @@
+[user]
+	email = chenjianbangstudy@yeah.net
+	name = James Chen
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/james/workspaces/github/Newton/preferences/git/config/global_level/gitignore
