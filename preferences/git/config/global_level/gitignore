@@ -1,5 +1,6 @@
 #build
 build/
+out/
 
 #nodejs
 dist/
@@ -7,6 +8,7 @@ node_modules/
 
 #java
 *.class
+target/
 
 #package file
 *.war
@@ -28,7 +30,6 @@ build/
 .idea/
 *.ipr
 *.iml
-*.xml
 *.iws
 
 # temp file
