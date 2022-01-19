@@ -98,10 +98,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH=$HOME/.toolbox/bin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 
 export PATH=$JAVA_HOME:$PATH
 export BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short
+
+#spider home
+export GLOBAL_LIB_HOME=/Users/jianbang/Library/Python/3.8/lib/python/site-packages
+export SPIDER_HOME=/Users/jianbang/workspaces/github/lianjia-beike-spider
+export PYTHONPATH=${GLOBAL_LIB_HOME}:${SPIDER_HOME}
 
 export AUTO_TITLE_SCREENS="NO"
 
@@ -229,23 +235,22 @@ alias nrm='ninja-dev-sync -remove '
 #to GlennWebsite/
 alias togwb='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteBlackPearl;p'
 alias togwc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteCommon;p'
-alias togwa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteAssets;p'
-alias togwoa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteOutboundAssets;p'
-alias togwoc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteOutboundContent;p'
+alias togwoc='cd /Users/jianbang/workspaces/websiteBlackPearl/src/GlennWebsiteOutboundContent;p'
 
 alias tognconfig='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennNodeConfiguration;p'
 alias togwcm='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteCommon;p'
 
 alias togwpsa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteProblemSolvingAssets;p'
 alias togwia='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteInventoryAssets;p'
-alias togwrma='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteResourceManagementAssets;p'
 alias togwpsc='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteProblemSolvingContent;p'
 alias togwic='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteInventoryContent;p'
 
 #to assets space
 #alias togwpa='cd /Users/jianbang/workspaces/assetsBlackPearl/src/GlennWebsitePickAssets;p'
-alias togwpa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsitePickAssets;p'
-alias togwa='cd /Users/jianbang/workspaces/GlennWebsite/src/GlennWebsiteAssets;p'
+alias togwpa='cd /Users/jianbang/workspaces/assets/src/GlennWebsitePickAssets;p'
+alias togwa='cd /Users/jianbang/workspaces/assets/src/GlennWebsiteAssets;p'
+alias togwoa='cd /Users/jianbang/workspaces/assets/src/GlennWebsiteOutboundAssets;p'
+alias togwrma='cd /Users/jianbang/workspaces/assetsBlackFalcon/src/GlennWebsiteResourceManagementAssets;p'
 
 #to website/
 alias togwb='cd /Users/jianbang/workspaces/website/src/GlennWebsiteBlackPearl;p'
@@ -267,6 +272,9 @@ alias rebuildigw='toagwic;bbc;bb;toagwc;bbc;bb;toagw;bbc;bb;bb server'
 
 export PATH=$HOME/.toolbox/bin:$PATH
 
+#github
+alias togithub='cd ~/workspaces/github/;p'
+
 #keberos
 #https://w.amazon.com/index.php/User:Aquesnel#get_new_forwardable_ticket
 #This command asks for a life time of 1 day for the ticket, but currently (2013-06-12) the amazon kerberos servers only give out tickets with life times of 10 hours.
@@ -281,7 +289,11 @@ alias rebuildgw='togwoa;bb run clean;rm -rf ./node_modules && bsync && bb && tog
 alias buildgwserver='togwoa;bb run clean;rm -rf ./node_modules;bb;togwoc;bbc;bb;togw;bbc;bb;bb server'
 
 #toec
-alias toec='ssh jianbang@dev-dsk-jianbang-2c-b95e7a9c.us-west-2.amazon.com'
+#alias toec='ssh jianbang@dev-dsk-jianbang-2c-b95e7a9c.us-west-2.amazon.com'
+#toec buidlerHub https://builderhub.corp.amazon.com/app.html#/cloud-desktop/users/jianbang
+#toec pipeline https://pipelines.amazon.com/pipelines/DevDesktop-jianbang-m5-release
+#toec env https://apollo.amazon.com/environments/DevDesktopAL2/jianbang-m5/stages/Prod
+alias toec='ssh jianbang@dev-dsk-jianbang-2a-ddf95fe8.us-west-2.amazon.com'
 #toec2
 alias toec2='ssh -o ProxyCommand=none jianbang@ec2-c3-jianbang-9ac7653a.us-west-2.amazon.com'
 
@@ -290,12 +302,34 @@ alias toec2='ssh -o ProxyCommand=none jianbang@ec2-c3-jianbang-9ac7653a.us-west-
 #timber EU https://apollo.amazon.com/environments/TimberFS/DUB/Glenn/
 #timber FE https://apollo.amazon.com/environments/TimberFS/PDX/Glenn/
 #timber CN https://apollo.amazon.com/environments/TimberFS/PEK/Glenn/
+#website blackpearl beta https://apollo.amazon.com/environments/HorizontePlatform/Glenn-BlackPearl/NA/-/stages/Beta
+#beta host: b-hp-glnn-b-na-2c-7e607b05.us-west-2.amazon.com b-hp-glnn-b-na-2c-e1645913.us-west-2.amazon.com
 #ssh timber host
-alias totimbercn='ssh glenn-timberfs-prod-cn-c4x-5bf4c6f3.cn-north-1.amazon.com';
-alias totimberna='ssh glenn-timberfs-na-prod-1d-6ab3d511.us-east-1.amazon.com';
+#alias totimbercn='ssh glenn-timberfs-prod-cn-c4x-5bf4c6f3.cn-north-1.amazon.com';
+alias totimbercn='ssh glenn-timberfs-prod-cn-1b-5e240ab6.cn-north-1.amazon.com';
+#alias totimberna='ssh glenn-timberfs-na-prod-1d-6ab3d511.us-east-1.amazon.com';
+alias totimberna='ssh glenn-timberfs-na-prod-1dd-3380bdfb.us-east-1.amazon.com';
+
+
+#Beta env log
+#website blackpearl https://apollo.amazon.com/environments/HorizontePlatform/Glenn-BlackPearl/NA/-/stages/Beta
+#pick beta https://apollo.amazon.com/environments/GlennPickAuthorityService/NA/-/stages/Beta
+#outbound beta https://apollo.amazon.com/environments/GlennOutboundService/NA/-/stages/Beta
+#Beta host 
+alias topickbeta='ssh 172.22.150.138';
+alias tooutboundbeta='ssh 172.22.134.138';
+#website blackpearl
+alias towebsitebeta='ssh 172.19.207.8';
+alias towebsitebeta1='ssh 172.19.0.211';
+#to trans beta
+#https://apollo.amazon.com/environments/GlennTransProxyService/NA/-/stages/Beta
+#glenn-tr-proxy-beta-na-2a-a3499a80.us-west-2.amazon.com
+#glenn-tr-proxy-beta-na-2b-a68e392f.us-west-2.amazon.com
+alias totransbeta='ssh 10.2.38.178'
+
 
 #connect to RMS / mysql 
-alias postgresql='java -jar /Users/jianbang/Documents/Workbench-Build125/sqlworkbench.jar &'
+alias postgresql='java -jar /Users/jianbang/Documents/Workbench-Build125-with-optional-libs/sqlworkbench.jar &'
 
 #james ec2 / ip 54.158.238.250
 alias tojamesec='ssh -i ~/.ssh/JamesKey.pem ec2-user@ec2-54-158-238-250.compute-1.amazonaws.com'
@@ -323,3 +357,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+#keberos
+#https://w.amazon.com/index.php/User:Aquesnel#get_new_forwardable_ticket
+#This command asks for a life time of 1 day for the ticket, but currently (2013-06-12) the amazon kerberos servers only give out tickets with life times of 10 hours.
+#This command asks for a renew lifetime of 1 month, but currently (2013-06-12) the amazon kerberos servers only give out tickets with life times of 1 week.
+alias i='kinit -f -l 86400 -r 2592000'
+#Renew ticket
+alias irenew='kinit -R'
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
