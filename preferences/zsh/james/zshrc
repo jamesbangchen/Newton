@@ -1,0 +1,196 @@
+# If you come from bash you might have to change your $PATH.
+export MAVEN_HOME=/Users/james/workspaces/apache-maven-3.8.6
+export PATH=$HOME/bin:/usr/local/bin:$MAVEN_HOME/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#Maven Home
+#export M2_HOME="/usr/local/Cellar/maven/3.2.3/libexec"
+#export M2="$M2_HOME/bin"
+#export PATH="$M2:$PATH"
+
+#sys cmd alias
+#grep
+alias grep='grep --color=always'
+
+#terminal UI color
+# for color
+#export LSCOLORS=GxFxCxDxBxegedabagaced
+#export CLICOLOR=1
+# \h:\W \u\$
+#export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
+
+#ls
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -all'
+
+#pwd
+alias p='pwd'
+#cd
+alias c='cat '
+alias v='vi '
+alias h='sudo vi /etc/hosts'
+
+#tree
+#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#also : brew install tree
+
+#macbook
+alias showspace='du -sh * | sort -rh '
+
+#cmd
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1'
+#alias cmd='cat ~/.bash_profile'
+alias cmd='cat ~/.zshrc'
+#alias vcmd='vi ~/.bash_profile'
+alias vcmd='vi ~/.zshrc'
+#alias s='source ~/.bash_profile'
+alias s='source ~/.zshrc'
+
+#git
+alias gcl='git clone'
+alias gaa='git add -A'
+alias ga='git add'
+alias gcmt='git commit -m'
+alias gpl='git pull'
+alias gl='git log'
+alias gst='git status'
+alias gph='git push'
+alias gd='git diff HEAD'
+alias gb='git branch'
+alias gcb='git checkout -b '
+
+#workspace
+alias tobarbar='cd /Users/james/workspaces/github/Barbarossa;p'
+alias toleetcode='cd /Users/james/workspaces/github/JamesLeetCode;p'
+
+#fatal: unable to access 'https://github.com/jamesbangchen/Barbarossa.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+#git config --global --add remote.origin.proxy ""
+
+#git config item with file path
+#git config --list --show-origin
+
+#链接：https://www.jianshu.com/p/6273e7ab0c56
+# 设置 JDK 7
+# export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
+# 设置 jdk 8
+# it goes wrong after mac os upgrade. 
+# refer to https://stackoverflow.com/questions/64917779/wrong-java-home-after-upgrade-to-macos-big-sur-v11-0-1
+# export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_8_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home'
+# install by IDEA
+export JAVA_17_HOME='/Users/james/Library/Java/JavaVirtualMachines/corretto-17.0.7/Contents/Home'
+
+# 设置 jdk 11
+export JAVA_11_HOME="$(/usr/libexec/java_home -v 11)"
+# 默认JDK 8
+#export JAVA_HOME=$JAVA_8_HOME
+export JAVA_HOME=$JAVA_17_HOME
+# alias命令动态切换JDK版本
+# alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
+alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+alias jdk17='export JAVA_HOME=$JAVA_17_HOME'
+
+# setup python env path
+export PATH="/usr/local/bin/python3:$PATH"
+
+#topython env
+alias tocatenv='cd /Users/james/workspaces/pythonSpace/.venv/bin'
+#run LittleCat python venv
+alias pip3cat='/Users/james/workspaces/pythonSpace/.venv/bin/pip3 '#

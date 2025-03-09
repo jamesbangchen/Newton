@@ -1,0 +1,58 @@
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+#Java_Home
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+
+#Maven Home
+#export M2_HOME="/usr/local/Cellar/maven/3.2.3/libexec"
+#export M2="$M2_HOME/bin"
+#export PATH="$M2:$PATH"
+
+# for color
+export CLICOLOR=1
+
+# \h:\W \u\$
+export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
+
+
+#sys cmd alias
+#grep
+alias grep='grep --color=always'
+#ls
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -all'
+#pwd
+alias p='pwd'
+#cd
+alias c='cd'
+alias v='vi'
+alias s='sudo'
+alias h='sudo vi /etc/hosts'
+
+#tree
+#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#also : brew install tree
+
+
+#dir
+alias bif='cd /Users/jameschen/base-autotest/base-autotest-BIF'
+
+#svn
+
+#git
+alias gcl='git clone'
+alias gad='git add'
+alias gcm='git commit -m'
+alias gpl='git pull'
+alias gpt='git pull origin framework'
+alias gph='git push'
+
+#cmd
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1'
+alias cmd='cat ~/.bash_profile'
+
+#LAMP
+alias apache='sudo apachectl'
+
+export PATH=$PATH:~/.nexustools

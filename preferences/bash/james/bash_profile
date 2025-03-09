@@ -1,0 +1,59 @@
+#Maven Home
+export MAVEN_HOME='/Users/james/workspaces/apache-maven-3.8.6'
+#export PATH='$MAVEN_HOME/bin:$PATH'
+
+
+echo 'export MAVEN_HOME=/usr/local/Cellar/maven/3.6.3_1' >> ~/.bash_profile
+echo 'export PATH=$MAVEN_HOME/bin:$PATH' >> ~/.bash_profile
+
+
+#sys cmd alias
+#grep
+alias grep='grep --color=always'
+
+#terminal UI color
+# for color
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export CLICOLOR=1
+# \h:\W \u\$
+export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
+
+
+
+#ls
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -all'
+
+#pwd
+alias p='pwd'
+#cd
+alias c='cat '
+alias v='vi '
+alias h='sudo vi /etc/hosts'
+
+#tree
+#alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+#also : brew install tree
+
+#cmd
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1'
+#alias cmd='cat ~/.bash_profile'
+alias cmd='cat ~/.zshrc'
+#alias vcmd='vi ~/.bash_profile'
+alias vcmd='vi ~/.zshrc'
+#alias s='source ~/.bash_profile'
+alias s='source ~/.zshrc'
+
+#git
+alias gcl='git clone'
+alias gaa='git add -A'
+alias ga='git add'
+alias gcmt='git commit -m'
+alias gpl='git pull'
+alias gl='git log'
+alias gst='git status'
+alias gph='git push'
+alias gd='git diff HEAD'
+alias gb='git branch'
+alias gcb='git checkout -b '
