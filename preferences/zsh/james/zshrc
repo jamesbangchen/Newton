@@ -190,6 +190,9 @@ alias jdk17='export JAVA_HOME=$JAVA_17_HOME'
 # setup python env path
 export PATH="/usr/local/bin/python3:$PATH"
 
+# add hombrew env path
+export PATH="/opt/homebrew/bin/brew:$PATH"
+
 #topython env
 alias tocatenv='cd /Users/james/workspaces/pythonSpace/.venv/bin'
 #run LittleCat python venv
