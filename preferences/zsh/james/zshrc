@@ -135,6 +135,7 @@ alias showspace='du -sh * | sort -rh '
 
 #cmd
 alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1'
+alias ip2='scutil --nwi'
 #alias cmd='cat ~/.bash_profile'
 alias cmd='cat ~/.zshrc'
 #alias vcmd='vi ~/.bash_profile'
@@ -172,28 +173,46 @@ alias toleetcode='cd /Users/james/workspaces/github/JamesLeetCode;p'
 # it goes wrong after mac os upgrade. 
 # refer to https://stackoverflow.com/questions/64917779/wrong-java-home-after-upgrade-to-macos-big-sur-v11-0-1
 # export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_8_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home'
+# export JAVA_8_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home'
 # install by IDEA
-export JAVA_17_HOME='/Users/james/Library/Java/JavaVirtualMachines/corretto-17.0.7/Contents/Home'
+#export JAVA_17_HOME='/Users/james/Library/Java/JavaVirtualMachines/corretto-17.0.7/Contents/Home'
+export JAVA_17_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home'
 
 # 设置 jdk 11
 export JAVA_11_HOME="$(/usr/libexec/java_home -v 11)"
+
+# set zulu jdk 8
+# export JAVA_ZULU_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_ZULU_HOME='/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home'
+
 # 默认JDK 8
+export JAVA_8_HOME=$JAVA_ZULU_HOME
 #export JAVA_HOME=$JAVA_8_HOME
 export JAVA_HOME=$JAVA_17_HOME
+#export JAVA_HOME=$JAVA_ZULU_HOME
+export PATH=$JAVA_HOME/bin/::$PATH
+
 # alias命令动态切换JDK版本
 # alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
-alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
-alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+#alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+#alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 alias jdk17='export JAVA_HOME=$JAVA_17_HOME'
 
+# 显示当前生效的 JDK 安装路径
+alias showjava="/usr/libexec/java_home -V"
+
 # setup python env path
-export PATH="/usr/local/bin/python3:$PATH"
+# export PATH="/usr/local/bin/python3:$PATH"
+export PATH="/Users/james/Library/Python/3.9/bin::$PATH"
 
 # add hombrew env path
-export PATH="/opt/homebrew/bin/brew:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
-#topython env
-alias tocatenv='cd /Users/james/workspaces/pythonSpace/.venv/bin'
-#run LittleCat python venv
-alias pip3cat='/Users/james/workspaces/pythonSpace/.venv/bin/pip3 '#
+# add maven env path
+export MAVEND_HOME=/usr/local/mvnd
+export MAVEN_HOME=/usr/local/mvnd/mvn
+export PATH=$MAVEN_HOME/bin::$PATH
+
+
+# 查看指定命名空间下所有 Pod 的镜像（以 higress-system 为例）
+# alias k8sshowpod4higress = kubectl get pods -n higress-system -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}'
